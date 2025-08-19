@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Love</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #ffe4e6, #fff);
+      overflow-x: hidden;
+      color: #333;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(12px);
+      border-radius: 0 0 20px 20px;
+    }
+    nav a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      color: #444;
+    }
+    nav a.active, nav a:hover {
+      color: #e11d48;
+    }
+    .page {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    h1, h2, h3 {
+      color: #b91c1c;
+    }
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ef476f;
+      transform: rotate(45deg);
+      animation: floatUp 10s linear infinite;
+    }
+    .heart::before, .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ef476f;
+      border-radius: 50%;
+    }
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+      30% { opacity: 1; }
+      100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
+    }
+    footer {
+      text-align: center;
+      margin: 2rem;
+      font-size: 0.8rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts"></div>
+
+  <nav>
+    <div><span style="color:#e11d48">❤</span> For My Love</div>
+    <div>
+      <a href="#how-much" class="active">How much</a>
+      <a href="#why">Why</a>
+    </div>
+  </nav>
+
+  <section id="how-much" class="page">
+    <h1>I love you more than words can carry.</h1>
+    <p>More than yesterday, less than tomorrow. My love keeps growing—quiet, steady, and certain—like the sky that wraps around us and the clouds that drift but never leave.</p>
+    <ul>
+      <li>It’s in every good-morning and every goodnight.</li>
+      <li>It’s in the way I think of you when I plan my day.</li>
+      <li>It’s in my patience on the hard days, and my joy on the bright ones.</li>
+    </ul>
+    <p style="margin-top:1.5rem; font-weight:600;">My love is overflowing: ❤ 100%+</p>
+  </section>
+
+  <section id="why" class="page">
+    <h2>Why I’m in love with you</h2>
+    <p>There are a thousand reasons, but here are a few I want you to keep close to your heart:</p>
+    <div style="display:grid; gap:1rem; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); margin-top:1.5rem;">
+      <div><h3>Your kindness</h3><p>You care in small, quiet ways that make every day softer. You check on me, you listen, and you make space for me to be myself.</p></div>
+      <div><h3>Your laugh</h3><p>It’s the sound I wait for. It brightens rooms and pulls me out of the heaviest thoughts like sunlight through clouds.</p></div>
+      <div><h3>Your courage</h3><p>You keep going, even when things are tough. Your strength inspires me to be braver and kinder too.</p></div>
+      <div><h3>The way we fit</h3><p>We talk about everything or nothing—and it still feels perfect. With you, the ordinary turns golden.</p></div>
+      <div><h3>How you love</h3><p>You love with patience, honesty, and warmth. You make love feel like home, not a test.</p></div>
+      <div><h3>Our future</h3><p>I see us building little rituals, chasing dreams, and choosing each other—over and over—no matter what the weather looks like.</p></div>
+    </div>
+    <h3 style="margin-top:2rem;">My promise to you</h3>
+    <p>I promise to show up for you—with patience, with care, and with laughter. I’ll hold your hand on stormy days and dance with you on sunny ones. I’ll choose you on ordinary Mondays and extraordinary Fridays, and all the days in between.</p>
+  </section>
+
+  <footer>Built with ❤ just for you.</footer>
+
+  <script>
+    const heartsContainer = document.querySelector('.hearts');
+    for (let i=0; i<15; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random()*100 + 'vw';
+      heart.style.animationDuration = (6 + Math.random()*6) + 's';
+      heartsContainer.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
