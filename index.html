@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -124,9 +124,9 @@
       position: absolute;
     }
 
-    /* Play button center */
+    /* Play button */
     .play-btn {
-      display: none;
+      display: block;
       position: fixed;
       top: 50%;
       left: 50%;
@@ -201,11 +201,6 @@
       setTimeout(() => heart.remove(), 10000);
     }
     setInterval(createHeart, 600);
-
-    // Show play button only on mobile
-    if (/Mobi|Android/i.test(navigator.userAgent)) {
-      document.querySelector('.play-btn').style.display = 'block';
-    }
 
     // Play with sound
     function playMusic() {
