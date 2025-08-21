@@ -38,6 +38,22 @@
       text-shadow: 0 0 10px #ff9eb5;
     }
 
+    /* MUSIC BUTTON */
+    .music-btn {
+      padding: 6px 15px;
+      border: none;
+      border-radius: 12px;
+      background: #ff2d55;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .music-btn:hover {
+      background: #ff5177;
+      box-shadow: 0 0 12px rgba(255,0,90,0.6);
+    }
+
     /* PAGE CONTENT */
     .page {
       max-width: 900px;
@@ -145,6 +161,7 @@
       <a href="#how-much">How much</a>
       <a href="#why">Why</a>
       <a href="#secret">Secret</a>
+      <button class="music-btn" onclick="toggleMusic()">Play ♫</button>
     </div>
   </nav>
 
@@ -182,6 +199,11 @@
 
   <footer>Made with ❤, only for you.</footer>
 
+  <!-- MUSIC -->
+  <audio id="bg-music" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  </audio>
+
   <script>
     // Floating hearts
     const heartsContainer = document.querySelector('.hearts');
@@ -196,6 +218,19 @@
     // Secret message reveal
     function showMessage() {
       document.getElementById("hidden").style.display = "inline-block";
+    }
+
+    // Music toggle
+    const music = document.getElementById("bg-music");
+    const musicBtn = document.querySelector(".music-btn");
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        musicBtn.textContent = "Pause ♫";
+      } else {
+        music.pause();
+        musicBtn.textContent = "Play ♫";
+      }
     }
   </script>
 </body>
